@@ -1,4 +1,7 @@
+
 *~
+*.loc
+*.soc
 *.aux
 *.fdb_latexmk
 /*.bak
@@ -26,3 +29,4 @@
 /auto
 
 .vscode/
+.DS_Storecd

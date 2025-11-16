@@ -23,18 +23,18 @@
 %%%%%%%%%%%
 % Default %
 %%%%%%%%%%%
-\documentclass[11pt,letterpaper,twocolumn]{article}
-\usepackage[11pt,nocopyright]{sigmin}
-\usepackage[square,comma,numbers,sort&compress]{natbib}
-\defaulttrue
+% \documentclass[11pt,letterpaper,twocolumn]{article}
+% \usepackage[11pt,nocopyright]{sigmin}
+% \usepackage[square,comma,numbers,sort&compress]{natbib}
+% \defaulttrue
 
 %%%%%%%%%%%
 % NeurIPS %
 %%%%%%%%%%%
-% \documentclass{article}
-% \usepackage{sty/neurips/template}
-% % \usepackage[final]{sty/neurips/template} % Uncomment for camera-ready version, but NOT for submission.
-% \neuripstrue
+\documentclass{article}
+\usepackage{sty/neurips/template}
+% \usepackage[final]{sty/neurips/template} % Uncomment for camera-ready version, but NOT for submission.
+\neuripstrue
 
 %%%%%%%%
 % ICML %
@@ -120,7 +120,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Then include your packages
+\usepackage{glossaries} 
 \input{pkgs}
+
+\newacronym{llm}{LLM}{large language model}
 
 % Add this line to address the microtype warning
 \microtypecontext{spacing=nonfrench}
@@ -128,36 +131,54 @@
 \newcommand{\sys}{\mbox{\textsc{Sys}}\xspace}
 
 % ref. http://en.wikibooks.org/wiki/LaTeX/Colors
-\newcommand{\HL}[1]{\textcolor{teal}{HL: #1}} % Hwiwon
-\newcommand{\LZ}[1]{\textcolor{blue}{KK: #1}} % Lingming Zhang
-\newcommand{\YY}[1]{\textcolor{orange}{YY: #1}}
 % Add your name here for colors like brown, purple, etc.
+\newcommand{\TK}[1]{\textcolor{teal}{TK: #1}} 
 \newcommand{\XX}[0]{\textcolor{red}{XXX}}
 \newcommand{\XXX}[1]{\textcolor{red}{XXX: #1}}
 \newcommand{\TODO}[1]{\textcolor{Melon}{TODO: #1}}
 
 \newcommand{\fix}{\marginpar{FIX}}
 \newcommand{\new}{\marginpar{NEW}}
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\eg}{\textit{e.g.}}
 
 \input{cmds}
+
+% \usepackage[todonotes={colorinlistoftodos,prependcaption,textsize=tiny,textwidth=1in}]{changes}
+\usepackage[
+  commandnameprefix=always,
+  todonotes={colorinlistoftodos,prependcaption,textsize=tiny,textwidth=0.83in}
+]{changes}
+% \usepackage[final]{changes}
+% \chadded[id=XX]{text}: Marks text as an addition.
+% \chdeleted[id=XX]{text}: Marks text as a deletion, often displayed with a strikethrough.
+% \chcomment[id=XX]{remark}: Adds a comment or annotation.
+% \chreplaced[id=XX]{new text}{old text}: Marks old text as replaced by new text.
+% \chhighlight[id=XX]{text}: Highlights specific text.
+
+\definechangesauthor[color=Blue,name=Takyoung]{TK}
+\definechangesauthor[color=Orange,name=Dilek]{DHT}
+
+\renewcommand{\sectionautorefname}{\S\nobreak\!}
+\renewcommand{\subsectionautorefname}{\S\nobreak\!}
+\renewcommand{\subsubsectionautorefname}{\S\nobreak\!}
+\newcommand{\algorithmautorefname}{Algorithm}
 
 \begin{document}
 
 \ifacmccs
-\input{abstract}
+\input{sec/0_abs}
 \input{hdr}
 \else
 \input{hdr}
-\input{abstract}
+\input{sec/0_abs}
 \fi
 
-\input{sec/intro}
-\input{sec/design}
-\input{sec/impl}
-\input{sec/eval}
-\input{sec/relwk}
-\input{sec/conclusion}
-\input{sec/ack}
+\input{sec/1_intro}
+\input{sec/2_relwk}
+\input{sec/3_method}
+\input{sec/4_exp}
+\input{sec/5_concl}
 
 % The \balance command is used to balance columns on the last page of a two-column document,
 % making them approximately equal in length.
@@ -210,6 +231,6 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \bibliography{p,conf}
 \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
 
-\input{sec/appendix}
+\input{sec/9_apdx}
 
 \end{document}
