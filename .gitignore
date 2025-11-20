@@ -4,6 +4,7 @@
 *.soc
 *.aux
 *.fdb_latexmk
+*.synctex.gz
 /*.bak
 /*.bbl
 /*.blg
@@ -29,4 +30,4 @@
 /auto
 
 .vscode/
-.DS_Storecd
+.DS_Store
