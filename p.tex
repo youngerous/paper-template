@@ -31,10 +31,10 @@
 %%%%%%%%%%%
 % NeurIPS %
 %%%%%%%%%%%
-\documentclass{article}
-\usepackage{sty/neurips/template}
-% \usepackage[final]{sty/neurips/template} % Uncomment for camera-ready version, but NOT for submission.
-\neuripstrue
+% \documentclass{article}
+% \usepackage{sty/neurips/template}
+% % \usepackage[final]{sty/neurips/template} % Uncomment for camera-ready version, but NOT for submission.
+% \neuripstrue
 
 %%%%%%%%
 % ICML %
@@ -111,17 +111,18 @@
 %%%%%%%
 % ACL %
 %%%%%%%
-% \documentclass[11pt]{article}
-% \usepackage[review]{sty/acl/template}
-% % \usepackage[final]{sty/acl/template} % Uncomment for camera-ready version, but NOT for submission.
-% % \usepackage[preprint]{sty/acl/template} % Uncomment for preprint version.
-% \acltrue
+\documentclass[11pt]{article}
+\usepackage[review]{sty/acl/template}
+% \usepackage[final]{sty/acl/template} % Uncomment for camera-ready version, but NOT for submission.
+% \usepackage[preprint]{sty/acl/template} % Uncomment for preprint version.
+\acltrue
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Then include your packages
 \usepackage{glossaries} 
 \input{pkgs}
+\glsdisablehyper
 
 \newacronym{llm}{LLM}{large language model}
 
@@ -167,11 +168,11 @@
 \begin{document}
 
 \ifacmccs
-\input{sec/0_abs}
+\input{abstract}
 \input{hdr}
 \else
 \input{hdr}
-\input{sec/0_abs}
+\input{abstract}
 \fi
 
 \input{sec/1_intro}

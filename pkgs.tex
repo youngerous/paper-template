@@ -27,7 +27,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage{pifont}
-\usepackage[labelfont=bf,font=small,skip=5pt]{caption}
+\ifacl
+\usepackage[labelfont=bf]{caption}
+\else
+  \usepackage[labelfont=bf]{caption}
+  % \usepackage[labelfont=bf,font=small,skip=5pt]{caption}
+\fi
 
 \usepackage[textsize=tiny]{todonotes}
 
@@ -85,11 +90,12 @@
 % Then your existing hyperref setup
 \usepackage{lineno}
 \usepackage{hyperref}
+\definecolor{darkblue}{rgb}{0, 0, 0.5}
 \hypersetup{
-  citecolor=blue,
-  linkcolor=blue,
+  citecolor=darkblue,
+  linkcolor=darkblue,
   breaklinks=true,
-  urlcolor=blue
+  urlcolor=darkblue
 }
 % if you use cleveref..
 \usepackage[capitalize,noabbrev]{cleveref}
