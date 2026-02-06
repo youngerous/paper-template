@@ -31,3 +31,5 @@
 
 .vscode/
 .DS_Store
+_minted/
+minted/
